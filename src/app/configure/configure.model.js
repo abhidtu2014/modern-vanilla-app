@@ -8,12 +8,12 @@ export const ConfigureModel = {
         {
           name: 'isSortable',
           label: 'sortable',
-          value: true
+          value: false
         },
         {
           name: 'isFilterable',
           label: 'filterable',
-          value: true
+          value: false
         }
       ]
     },
@@ -24,12 +24,12 @@ export const ConfigureModel = {
         {
           name: 'isSortable',
           label: 'sortable',
-          value: true
+          value: false
         },
         {
           name: 'isFilterable',
           label: 'filterable',
-          value: true
+          value: false
         }
       ]
     },
@@ -40,12 +40,12 @@ export const ConfigureModel = {
         {
           name: 'isSortable',
           label: 'sortable',
-          value: true
+          value: false
         },
         {
           name: 'isFilterable',
           label: 'filterable',
-          value: true
+          value: false
         }
       ]
     },
@@ -56,7 +56,7 @@ export const ConfigureModel = {
         {
           name: 'isSortable',
           label: 'sortable',
-          value: true
+          value: false
         }
       ]
     },
@@ -67,12 +67,12 @@ export const ConfigureModel = {
         {
           name: 'isSortable',
           label: 'sortable',
-          value: true
+          value: false
         },
         {
           name: 'isFilterable',
           label: 'filterable',
-          value: true
+          value: false
         }
       ]
     }
@@ -85,7 +85,7 @@ export const ConfigureModel = {
         {
           name: 'isHeaderFixed',
           label: 'True/False',
-          value: true
+          value: false
         }
       ]
     },

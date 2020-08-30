@@ -25,14 +25,6 @@ export const configureComponent = {
         )
         checkboxEle.addEventListener('click', function (e) {
           e.preventDefault()
-          // if (checkbox.value) {
-          //   console.log(
-          //     'Remove',
-          //     `custom-${inputElement.name}-${checkbox.name}`
-          //   )
-          // } else {
-          //   console.log('Add', `custom-${inputElement.name}-${checkbox.name}`)
-          // }
           checkbox.value = !checkbox.value // Change Specific Model Element
           self.render() // re-render Component
         })
