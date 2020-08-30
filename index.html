@@ -16,5 +16,28 @@
     <noscript>
       <strong>Please enable Javascript to run this Application</strong>
     </noscript>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+    <!-- Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyDbNhLnKqT1MkkQcmsU486lzmOMIDySNto',
+        authDomain: 'modern-vanilla-app-demo.firebaseapp.com',
+        databaseURL: 'https://modern-vanilla-app-demo.firebaseio.com',
+        projectId: 'modern-vanilla-app-demo',
+        storageBucket: 'modern-vanilla-app-demo.appspot.com',
+        messagingSenderId: '328010501061',
+        appId: '1:328010501061:web:567541ce4ec794e53f19ac',
+        measurementId: 'G-K0YPZLJFDD'
+      }
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig)
+      firebase.analytics()
+    </script>
   </body>
 </html>

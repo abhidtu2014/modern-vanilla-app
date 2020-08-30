@@ -45,3 +45,6 @@ package-lock
 
 # code coverage
 .nyc_output
+
+#firebase cache
+.firebase
