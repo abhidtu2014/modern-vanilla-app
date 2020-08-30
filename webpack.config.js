@@ -12,8 +12,7 @@ module.exports = () => ({
   },
   devtool: 'eval-source-map',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    path: path.resolve(__dirname, 'dist')
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
@@ -34,11 +33,15 @@ module.exports = () => ({
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          'style-loader',
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          },
           'sass-loader'
         ]
       }
@@ -48,9 +51,7 @@ module.exports = () => ({
     new CleanWebpackPlugin('dist', {}),
     new webpack.ProgressPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].css'
-    }),
+    new MiniCssExtractPlugin({}),
     new HtmlWebpackPlugin({
       inject: true,
       hash: true,

@@ -151,6 +151,9 @@ export const DataTableComponent = {
       // If pagination is not enabled, set number of Entries as Total Data Length
       numberOfEntries = DataTableModel.data.length
     }
+    DataTableModel.numberOfPages = Math.ceil(
+      DataTableModel.data.length / numberOfEntries
+    )
     const start = (DataTableModel.currentPage - 1) * numberOfEntries
     const end = start + numberOfEntries
     DataTableModel.currentPageData = DataTableModel.data.slice(start, end)
