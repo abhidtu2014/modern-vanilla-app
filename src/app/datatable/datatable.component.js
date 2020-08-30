@@ -14,6 +14,7 @@ export const DataTableComponent = {
   init() {
     this.appElement = document.getElementById('app')
     this.appElement.innerHTML = ''
+    this.appElement.scrollTop = '0px' // Fix scroll on top
     this.render()
   },
 

@@ -1,3 +1,5 @@
+import { ConfigureModel } from '../configure/configure.model'
+
 export const DataTableTemplate = (model) => `
   <section class="data-table-container">
     <h3>${model.title}</h3>
@@ -14,9 +16,18 @@ export const DataTableTemplate = (model) => `
 `
 
 const HeaderTemplate = (header) => {
-  let filterStyle = header.isFilterable ? '' : 'display: none;'
-  return `<th style="width:20%;">
-    <p id="sort-button-${header.name}" style="text-align: center; margin: 0; cursor: pointer;">
+  const filterStyle = header.isFilterable ? '' : 'display: none;'
+
+  const stickyHeaderObj = ConfigureModel.customFields
+    .find((field) => field.name === 'isHeaderFixed')
+    .checkboxes.find((checkbox) => checkbox.name === 'isHeaderFixed')
+
+  let stickyHeaderStyle = stickyHeaderObj.value
+    ? 'position: sticky; top: -20px;' // Important for stickiness
+    : `position: '';`
+
+  return `<th style="width:20%; ${stickyHeaderStyle}">
+    <p id="sort-button-${header.name}" style="margin: 0; cursor: pointer;">
       ${header.label}
     </p>
     <br>

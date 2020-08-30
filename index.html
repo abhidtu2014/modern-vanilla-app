@@ -89,39 +89,6 @@
       }
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 1px 1px 3px 0px #777;
-    }
-
-    .todo-item {
-      margin: 20px 0;
-    }
-
-    .add-todo-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .todo-item-name {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    li:hover {
-      box-shadow: 1px 0px 1px 0px #777;
-    }
-
     button:hover {
       box-shadow: none;
     }
@@ -140,27 +107,30 @@
     }
 
     #myTable {
-      border-collapse: collapse; /* Collapse borders */
-      width: 100%; /* Full-width */
-      border: 1px solid #ddd; /* Add a grey border */
-      font-size: 18px; /* Increase font-size */
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+      font-size: 18px;
+      position: relative;
     }
 
     #myTable th,
     #myTable td {
       text-align: left; /* Left-align text */
-      padding: 12px; /* Add padding */
+      padding: 0.25rem;
     }
 
     #myTable tr {
-      /* Add a bottom border to all table rows */
       border-bottom: 1px solid #ddd;
     }
 
     #myTable tr.header,
     #myTable tr:hover {
-      /* Add a grey background color to the table header and on hover */
       background-color: #f1f1f1;
+    }
+
+    th {
+      background: white;
+      box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
     }
   </style>
   <body>
