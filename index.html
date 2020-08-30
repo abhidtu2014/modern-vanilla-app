@@ -45,10 +45,18 @@
 
     main {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       height: calc(100vh - 140px);
       padding: 20px 40px;
       overflow-y: auto;
+    }
+
+    .app-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
 
     /* input {
@@ -68,6 +76,13 @@
       padding: 10px 15px;
       /* border-radius: 20px; */
       margin-top: 20px;
+    }
+
+    button:disabled,
+    button[disabled] {
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
     }
 
     .button {
@@ -102,6 +117,19 @@
       padding: 40px;
     }
 
+    .form-outer-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      align-items: center;
+    }
+
+    .form-title {
+      display: block;
+    }
+    .form-inner-container {
+    }
+
     .custom-label {
       display: block;
     }
@@ -129,8 +157,26 @@
     }
 
     th {
-      background: white;
+      background-color: aquamarine;
       box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+    }
+
+    .data-table-container {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+    }
+    .data-table-title {
+      display: block;
+    }
+    .table-wrapper {
+      height: 50vh;
+      overflow: auto;
+    }
+    .pagination-container {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
     }
   </style>
   <body>

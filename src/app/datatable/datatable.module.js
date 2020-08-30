@@ -11,11 +11,28 @@ export const DataTableModule = {
   },
 
   initTableData() {
-    // Populate Table data in DataTableModel
+    // Populate data in DataTableModel
+    this.populateTableData()
+    this.populatePaginationData()
+    this.populateHeaders()
+  },
+
+  populateTableData() {
     const fields = ConfigureModel.tableFields.map((field) => field.name)
     DataTableModel.data = extractTableData(CountryData, fields)
+  },
 
-    // Populate Table Headers in DataTableModel
+  populatePaginationData() {
+    const numberOfEntries = ConfigureModel.numericFields.find(
+      (field) => field.name === 'numberOfEntries'
+    ).value
+    DataTableModel.currentPage = 1 // Initialize with first as current page
+    DataTableModel.numberOfPages = Math.ceil(
+      DataTableModel.data.length / numberOfEntries
+    )
+  },
+
+  populateHeaders() {
     DataTableModel.headers = ConfigureModel.tableFields.map((field) => {
       const isSortableObj = field.checkboxes.find(
         (checkbox) => checkbox.name === 'isSortable' && checkbox.value

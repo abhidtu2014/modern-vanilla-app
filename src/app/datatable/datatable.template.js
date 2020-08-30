@@ -2,16 +2,23 @@ import { ConfigureModel } from '../configure/configure.model'
 
 export const DataTableTemplate = (model) => `
   <section class="data-table-container">
-    <h3>${model.title}</h3>
-    <table id="myTable">
-      <tr class="header">
-      ${model.headers.reduce(
-        (html, header) => html + HeaderTemplate(header),
-        ''
-      )}
-      ${model.data.reduce((html, row) => html + RowTemplate(row), '')}
-      </tr>
-    </table>
+    <section class="data-table-title">
+      <h3>${model.title}</h3>
+    </section>
+    <section class="table-wrapper">
+      <table id="myTable">
+        <tr class="header">
+        ${model.headers.reduce(
+          (html, header) => html + HeaderTemplate(header),
+          ''
+        )}
+        ${model.currentPageData.reduce(
+          (html, row) => html + RowTemplate(row),
+          ''
+        )}
+        </tr>
+      </table>
+    </section>
   </section>
 `
 
@@ -23,8 +30,8 @@ const HeaderTemplate = (header) => {
     .checkboxes.find((checkbox) => checkbox.name === 'isHeaderFixed')
 
   let stickyHeaderStyle = stickyHeaderObj.value
-    ? 'position: sticky; top: -20px;' // Important for stickiness
-    : `position: '';`
+    ? 'position: sticky; top: 0;' // Important for stickiness
+    : `position: relative;`
 
   return `<th style="width:20%; ${stickyHeaderStyle}">
     <p id="sort-button-${header.name}" style="margin: 0; cursor: pointer;">

@@ -35,7 +35,7 @@ export const configureComponent = {
       const perPageEntryEle = document.getElementById(`custom-${inputEle.name}`)
       perPageEntryEle.addEventListener('change', (e) => {
         e.preventDefault()
-        inputEle.value = e.target.value
+        inputEle.value = Number(e.target.value)
         self.render() // re-render Component
       })
     })

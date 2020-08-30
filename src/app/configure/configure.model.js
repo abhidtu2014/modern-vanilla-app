@@ -90,7 +90,7 @@ export const ConfigureModel = {
       ]
     },
     {
-      name: 'pagination',
+      name: 'isPaginationEnabled',
       label: 'Do you want Pagination ?',
       checkboxes: [
         {

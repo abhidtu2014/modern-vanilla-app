@@ -1,7 +1,9 @@
 export const ConfigureTemplate = (model) => `
-  <section class="form-container">
-    <h3>${model.title}</h3>
-    <form>
+  <section class="form-outer-container">
+    <section class="form-title">
+      <h3>${model.title}</h3>
+    </section>
+    <section class="form-inner-container">
       ${model.tableFields.reduce(
         (html, field) => html + customFieldFormTemplate(field),
         ''
@@ -14,7 +16,7 @@ export const ConfigureTemplate = (model) => `
         (html, field) => html + normalFormFieldsTemplate(field),
         ''
       )}
-    </form>
+    </section>
     <button id="form-submission-button">Save Form</button>
   </section>
 `
