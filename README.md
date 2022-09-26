@@ -12,6 +12,3 @@ To run on your local environment perform the following steps:
 - Clone the repo
 - Run `npm install`
 - Run `npm start`
-
-### Hosted App Demo
-[App Demo](https://modern-vanilla-app-demo.web.app)
